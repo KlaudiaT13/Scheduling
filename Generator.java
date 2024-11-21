@@ -1,15 +1,28 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class generator {
-    int m; //number of machines
+public class Generator {
     int n; // number of jobs to assign
     double fraction = 0.1; //for dependent testing times; fraction of upper limit TODO does 1/10 make sense?
 
-    public generator(int m, int n) {
-        this.m = m;
+    public Generator(int n) {
         this.n = n;
     }
+
+     public static Job generateJob(double lambda){
+        double upper_limit = generateUpperLimit(lambda);
+        return new Job(upper_limit, generateReducedComputationTime(lambda, upper_limit), generateIndependentTest(lambda));
+    }
+
+    public static List<Job> generateJobs(double lambda, int n){
+        List<Job> jobs = new ArrayList<>();
+        for(int i = 0; i < n; i++){
+            jobs.add(generateJob(lambda));
+        }
+        return jobs;
+    }
+
     public ArrayList<Double> generateUpperLimits(int n, double lambda) {
         ArrayList<Double> upperLimits = batchRandomNumberInExponentialDistribution(n, lambda);
         return upperLimits;
@@ -31,6 +44,20 @@ public class generator {
         return computationTimes;
     }
 
+    public static double generateUpperLimit(double lambda) {
+        return randomNumberInExponentialDistribution(lambda);
+    }
+
+    public static double generateIndependentTest(double lambda) {
+        return randomNumberInExponentialDistribution(lambda);
+    }
+
+    public static double generateReducedComputationTime(double lambda, double upperLimit) {
+        return Math.min(upperLimit, randomNumberInExponentialDistribution(lambda));
+    }
+
+
+
     public ArrayList<Double> generateUniformTests(int n) {
         ArrayList<Double> testTimes = new ArrayList<>();
         for (int i = 0; i < n; i++) {
@@ -48,7 +75,7 @@ public class generator {
         return dependentTests;
     }
 
-    public Double randomNumberInExponentialDistribution(double lambda) {
+    public static double randomNumberInExponentialDistribution(double lambda) {
         Random rand = new Random();
         return Math.log(1-rand.nextDouble())/(-lambda);
     }
@@ -59,6 +86,15 @@ public class generator {
             batchNumbers.add(randomNumberInExponentialDistribution(lambda));
         }
         return batchNumbers;
+    }
+
+    public ArrayList<Integer> castToInteger(ArrayList<Double> list){
+        int length = list.size();
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (int i = 0; i < length; i++) {
+            integers.add(list.get(i).intValue());
+        }
+        return integers;
     }
 
 }
