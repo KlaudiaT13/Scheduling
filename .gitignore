@@ -1,0 +1,14 @@
+.classpath
+.project
+.settings/
+
+.DS_Store
+target/
+
+.idea/
+*.iml
+
+*.log
+/.java-version
+
+/.envrc

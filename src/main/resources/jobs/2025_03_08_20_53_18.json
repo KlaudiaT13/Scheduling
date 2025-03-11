@@ -1,0 +1,54 @@
+{
+  "description" : "computation1",
+  "jobTemplateList" : [ {
+    "upperLimit" : 0.49452708686225055,
+    "reducedComputationTime" : 0.38760460756624077,
+    "test" : 0.22576807255064593,
+    "id" : "b69e88d7-7571-4cef-a978-b6314e63b089"
+  }, {
+    "upperLimit" : 0.010646586070524416,
+    "reducedComputationTime" : 0.010646586070524416,
+    "test" : 0.2883552400193153,
+    "id" : "0a3c9edf-8a76-4cdb-a2b0-7139ae296e8a"
+  }, {
+    "upperLimit" : 0.32673060648752156,
+    "reducedComputationTime" : 0.309030297297934,
+    "test" : 0.18736469299360345,
+    "id" : "c5536a70-b3b5-41af-b5b9-a16ddc6d3f6a"
+  }, {
+    "upperLimit" : 0.9924507389860273,
+    "reducedComputationTime" : 0.10864466651238348,
+    "test" : 0.09085713741850111,
+    "id" : "b128d464-b99c-43e0-a192-94db07139b9b"
+  }, {
+    "upperLimit" : 0.17298533034565694,
+    "reducedComputationTime" : 0.015693346111253524,
+    "test" : 0.18803952392236956,
+    "id" : "484b5e07-ea6f-48e9-8ff8-bc81969da218"
+  }, {
+    "upperLimit" : 0.09574793247702751,
+    "reducedComputationTime" : 0.09574793247702751,
+    "test" : 0.029723091151098276,
+    "id" : "de6bd128-1194-43a2-9298-5567be680b09"
+  }, {
+    "upperLimit" : 0.08732881410027785,
+    "reducedComputationTime" : 0.08732881410027785,
+    "test" : 0.0528533689409952,
+    "id" : "d4b721d5-7a4e-4616-939e-5a699bfd9f8b"
+  }, {
+    "upperLimit" : 0.31884407895898054,
+    "reducedComputationTime" : 0.14744494729448898,
+    "test" : 0.86114294805347,
+    "id" : "59f23a9d-097d-4662-9512-73cf4709bcfb"
+  }, {
+    "upperLimit" : 0.6592278093014512,
+    "reducedComputationTime" : 0.16001360268739545,
+    "test" : 0.9305888366954141,
+    "id" : "822ec70f-35ff-4fb7-ab72-a992ad1943d4"
+  }, {
+    "upperLimit" : 1.0117593258407875,
+    "reducedComputationTime" : 0.04815893908468426,
+    "test" : 0.7293128056320172,
+    "id" : "feff5d3a-8c52-43a9-b67e-1f6859085c82"
+  } ]
+}
