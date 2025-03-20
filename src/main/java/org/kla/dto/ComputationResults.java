@@ -14,8 +14,7 @@ public class ComputationResults {
         this.jobs = jobs;
     }
 
-    public List<JobTemplate> getJobs() {
-        return jobs;
+    public List<JobTemplate> getJobs() {return jobs;
     }
 
     public void setJobs(List<JobTemplate> jobs) {

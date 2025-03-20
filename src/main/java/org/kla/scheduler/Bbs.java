@@ -11,19 +11,17 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class Sbs implements Compute {
+public class Bbs implements Compute {
     int numberOfMachines; // number of machines
-    int numberOfJobs; // number of jobs
-    double lambda;
+    int numberOfJobs; // number of jobs\
     public static double PHI = 1.618;
     List<JobTemplate> jobTemplates;
     double tm;
 
-    public Sbs(int numberOfMachines, List<JobTemplate> jobTemplates) {
+    public Bbs(int numberOfMachines, List<JobTemplate> jobTemplates) {
         this.numberOfMachines =numberOfMachines;
         this.numberOfJobs = jobTemplates.size();
         this.jobTemplates = jobTemplates;
-        this.lambda = 2;
         tm = tmValue();
     }
 
@@ -41,8 +39,8 @@ public class Sbs implements Compute {
 
         ArrayList<Job> b = new ArrayList<>();
         ArrayList<Job> s = new ArrayList<>();
-        ArrayList<Job> s1 = new ArrayList<>();
-        ArrayList<Job> s2 = new ArrayList<>();
+        ArrayList<Job> b1 = new ArrayList<>();
+        ArrayList<Job> b2 = new ArrayList<>();
 
         for(Job job: jobs) {
             if ((job.getRatio()) >= this.tm) {
@@ -52,48 +50,52 @@ public class Sbs implements Compute {
             }
         }
 
-        //TODO did it sort right? should be from low to high
-        s.sort(Comparator.comparing(Job::getTau)); //TODO try to restore random order in s2, maybe important
+        b.sort(Comparator.comparing(Job::getTau));
+        s.sort(Comparator.comparing(Job::getTau)); //<- here, difference from sbs, aside from different tm
 
-        //take numberOfMachines jobs from s and place them in s1 (if there are enough)
         int tempm = numberOfMachines;
-        for (int i = 0; i < s.size(); i++) {
+        for (int i = 0; i < b.size(); i++) {
             if (tempm > 0) {
-                s1.add(s.get(i));
+                b1.add(b.get(i));
                 tempm--;
             } else {
-                s2.add(s.get(i));
+                b2.add(b.get(i));
             }
         }
-        //step 5
-        for (int i = 0; i < s1.size(); i++) {
+
+        for (int i = 0; i < b1.size(); i++) {
             Machine machine = machinesq.poll();
-            if (s1.get(i).getRatio() >= PHI) {
-                machine.addTask(s1.get(i), JobType.TEST);
-                machine.addTask(s1.get(i), JobType.REDUCED_TIME);
+            if (b1.get(i).getRatio() >= PHI) {
+                machine.addTask(b1.get(i), JobType.TEST);
+                machine.addTask(b1.get(i), JobType.REDUCED_TIME);
             } else {
-                machine.addTask(s1.get(i), JobType.UPPER_LIMIT);
+                machine.addTask(b1.get(i), JobType.UPPER_LIMIT);
             }
             machinesq.add(machine);
         }
-        for (int i = 0; i < b.size(); i++) {
+
+        for (int i = 0; i < b2.size(); i++) {
             Machine machine = machinesq.poll();
-            machine.addTask(b.get(i), JobType.TEST);
-            machine.addTask(b.get(i), JobType.REDUCED_TIME);
+            machine.addTask(b2.get(i), JobType.TEST);
+            machine.addTask(b2.get(i), JobType.REDUCED_TIME);
             machinesq.add(machine);
         }
 
-        for (int i = 0; i < s2.size(); i++) {
+        for (int i = 0; i < s.size(); i++) {
             Machine machine = machinesq.poll();
-            machine.addTask(s2.get(i), JobType.UPPER_LIMIT);
+            machine.addTask(s.get(i), JobType.UPPER_LIMIT);
             machinesq.add(machine);
         }
-
-        return new ComputationResult(new ArrayList<>(machinesq));
+       return new ComputationResult(new ArrayList<>(machinesq));
     }
 
     private double tmValue(){
         double m = (double) numberOfMachines;
-        return ((3 + Math.sqrt(5)) * m - 2 + Math.sqrt((38 + 6 * Math.sqrt(5)) * m * m - 4 * (11 + Math.sqrt(5)) * m + 12))/(6 * m - 2);
+        if(numberOfMachines == 2){
+            return ((3 * PHI + 6 + Math.sqrt(45 * PHI + 213))/14);
+        }else{
+            return ((3 * m * PHI + 4 * m - 4)/(4 * m -1));
+        }
     }
+
 }

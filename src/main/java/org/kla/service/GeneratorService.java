@@ -17,7 +17,8 @@ public class GeneratorService {
 
     public JobTemplate generateJobTemplate(double lambda) {
         double upper_limit = generateUpperLimit(lambda);
-        return new JobTemplate(upper_limit, generateReducedComputationTime(lambda, upper_limit), generateIndependentTest(lambda));
+        return new JobTemplate(upper_limit, generateReducedComputationTime(lambda, upper_limit), 1);
+//        return new JobTemplate(upper_limit, generateReducedComputationTime(lambda, upper_limit), generateIndependentTest(lambda));
     }
 
     public List<JobTemplate> generateJobTemplates(int numberOfJobs, double lambda) {

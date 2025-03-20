@@ -11,7 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class Sbs implements Compute {
+public class SbsUniform implements Compute {
     int numberOfMachines; // number of machines
     int numberOfJobs; // number of jobs
     double lambda;
@@ -19,12 +19,12 @@ public class Sbs implements Compute {
     List<JobTemplate> jobTemplates;
     double tm;
 
-    public Sbs(int numberOfMachines, List<JobTemplate> jobTemplates) {
+    public SbsUniform(int numberOfMachines, List<JobTemplate> jobTemplates) {
         this.numberOfMachines =numberOfMachines;
         this.numberOfJobs = jobTemplates.size();
         this.jobTemplates = jobTemplates;
         this.lambda = 2;
-        tm = tmValue();
+        tm = tmUniformValue();
     }
 
     @Override
@@ -92,8 +92,8 @@ public class Sbs implements Compute {
         return new ComputationResult(new ArrayList<>(machinesq));
     }
 
-    private double tmValue(){
+    private double tmUniformValue(){
         double m = (double) numberOfMachines;
-        return ((3 + Math.sqrt(5)) * m - 2 + Math.sqrt((38 + 6 * Math.sqrt(5)) * m * m - 4 * (11 + Math.sqrt(5)) * m + 12))/(6 * m - 2);
+        return (2 * m - 1 + Math.sqrt(16 * m * m - 14 * m + 3)) / (2 * m);
     }
 }

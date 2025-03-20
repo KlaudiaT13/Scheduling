@@ -6,118 +6,160 @@
 
     <script src="/static/d3.v7.js"></script>
     <script src="/static/json_view.js"></script>
+    <script src="/static/bootstrap.bundle.js"></script>
 
     <link rel="icon" type="image/svg+xml" href="/static/logo.svg"/>
-
+    <link rel="stylesheet" href="/static/app.css">
+    <link rel="stylesheet" href="/static/bootstrap.css">
 </head>
 <body>
-<h3 style="color: #4695EB">aaaa</h3>
 
-<label for="file-select">Choose a file:</label>
-<select name="jobsfile" id="file-select">
-    <option value="">Choose file with jobs</option>
-    {#for file in files}
-        <option value={file}>{file}</option>
-    {/for}
-</select>
+    <div class="container-fluid form-bg">
+        <form action="/" method="get" class="gx-3 gy-2 align-items-center form-horizontal">
+            <div class="row">
 
-<div id="container"></div>
+                <div class="col-sm-1">
+                    <label class="form-label" for="numberOfMachines">Machines:</label>
+                    <input name="machine" type="text" class="form-control" id="numberOfMachines" value={machine}>
+                </div>
+                <div class="col-sm-4">
+                    <label class="form-label" for="selectFileId">Choose a file:</label>
+                    <select name="file" value={currentFile} class="form-control" id="selectFileId">
+                        {#for file in files}
+                            <option value={file} {#if file is currentFile}selected="selected"{/if}>{file}</option>
+                        {/for}
+                    </select>
+                </div>
+                <div class="col-sm-7">
+                    <label class="form-label" for="algoinputid">Choose algorithms:</label>
+                    {#for algo in algorithms}
+                        <div class="custom-control custom-checkbox mr-sm-2" id="algoinputid">
+                            <input name="alg" type="checkbox" class="custom-control-input" id="{algo.name}" value="{algo.name}" {#if algo.selected}checked{/if}>
+                            <label class="custom-control-label" for="{algo.name}">{algo.name} {#if algo.description} - {algo.description}{/if}</label>
+                        </div>
+                    {/for}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-3 col-sm-offset-2 col-sm-3">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
+    <div id="chartid">
+        <div id="container"></div>
+    </div>
+
+
+    <script type="module">
+
+        // Declare the chart dimensions and margins.
+        const width = 1240;
+        const height = 100 * {resultSize};
+        const marginTop = 20;
+        const marginRight = 20;
+        const marginBottom = 30;
+        const marginLeft = 80;
+        const data = {results.raw};
+
+        // Declare the x (horizontal position) scale.
+        // const x = d3.scaleUtc()
+        //     .domain([new Date("2023-01-01"), new Date("2024-01-01")])
+        //     .range([marginLeft, width - marginRight]);
+        const maxTime = d3.max(data, d => d.computationResult.computationTime);
+        const x = d3.scaleLinear()
+            .domain([0, d3.format("0.1f")(maxTime)])
+            .range([marginLeft, width - marginRight]);
+
+        // Declare the y (vertical position) scale.
+        // const y = d3.scaleLinear()
+        //     .domain([0, 100])
+        //     .range([height - marginBottom, marginTop]);
+
+        const y = d3.scaleBand()
+            // .domain(d3.sort(data, d => -d.computationResult.computationTime).map(d => d.description))
+            .domain(d3.sort(data, d => d.description).map(d => d.description))
+            // .domain(d3.map(d => d.description))
+            .rangeRound([marginTop, height - marginBottom])
+            .padding(0.1);
+
+        // Create the SVG container.
+        const svg = d3.create("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        // Add the x-axis.
+        svg.append("g")
+            .attr("transform", `translate(0,$\{height - marginBottom\})`)
+            .call(d3.axisBottom(x));
+
+        // Add the y-axis.
+        svg.append("g")
+            .attr("transform", `translate($\{marginLeft\},0)`)
+            .call(d3.axisLeft(y));
+
+        // Append a rect for each algorithm.
+        svg.append("g")
+            .attr("fill", "steelblue")
+            .selectAll()
+            .data(data)
+            .join("rect")
+            .attr("x", x(0))
+            .attr("y", (d) => y(d.description))
+            .attr("width", (d) => x(d.computationResult.computationTime) - x(0))
+            .attr("height", y.bandwidth());
+
+        // Append a label for each alg.
+        svg.append("g")
+            .attr("fill", "white")
+            .attr("text-anchor", "end")
+            .selectAll()
+            .data(data)
+            .join("text")
+            .attr("x", (d) => x(d.computationResult.computationTime))
+            .attr("y", (d) => y(d.description) + y.bandwidth() / 2)
+            .attr("dy", "0.35em")
+            .attr("dx", -4)
+            .text((d) => d.computationResult.computationTime)
+            .call((text) => text.filter(d => x(d.computationResult.computationTime) - x(0) < 140) // short bars
+                .attr("dx", +4)
+                .attr("fill", "black")
+                .attr("text-anchor", "start"));
+
+        // Append the SVG element.
+        container.append(svg.node());
+
+    </script>
+
+    <h2 style="color: #4695EB">Result:</h2>
+
+    <andypf-json-viewer
+            indent="2"
+            expanded="false"
+            theme="material"
+            show-data-types="false"
+            show-toolbar="true"
+            expand-icon-type="square"
+            show-copy="true"
+            show-size="true"
+    >
+        {results.raw}
+    </andypf-json-viewer>
+
+    <h2 style="color: #4695EB">Jobs:</h2>
+    <andypf-json-viewer
+            indent="2"
+            expanded="false"
+            theme="material"
+            show-data-types="false"
+            show-toolbar="true"
+            expand-icon-type="square"
+            show-copy="true"
+            show-size="true"
+    >
+        {jobs.raw}
+    </andypf-json-viewer>
 </body>
-<script type="module">
-
-    // Declare the chart dimensions and margins.
-    const width = 640;
-    const height = 400;
-    const marginTop = 20;
-    const marginRight = 20;
-    const marginBottom = 30;
-    const marginLeft = 40;
-    const data = {results.raw};
-
-    // Declare the x (horizontal position) scale.
-    // const x = d3.scaleUtc()
-    //     .domain([new Date("2023-01-01"), new Date("2024-01-01")])
-    //     .range([marginLeft, width - marginRight]);
-    const x = d3.scaleLinear()
-        .domain([0, 10])
-        .range([marginLeft, width - marginRight]);
-
-    // Declare the y (vertical position) scale.
-    // const y = d3.scaleLinear()
-    //     .domain([0, 100])
-    //     .range([height - marginBottom, marginTop]);
-
-    const y = d3.scaleBand()
-        // .domain(d3.sort(data, d => -d.computationResult.computationTime).map(d => d.description))
-        .domain(d3.sort(data, d => d.description).map(d => d.description))
-        // .domain(d3.map(d => d.description))
-        .rangeRound([marginTop, height - marginBottom])
-        .padding(0.1);
-
-    // Create the SVG container.
-    const svg = d3.create("svg")
-        .attr("width", width)
-        .attr("height", height);
-
-    // Add the x-axis.
-    svg.append("g")
-        .attr("transform", `translate(0,$\{height - marginBottom\})`)
-        .call(d3.axisBottom(x));
-
-    // Add the y-axis.
-    svg.append("g")
-        .attr("transform", `translate($\{marginLeft\},0)`)
-        .call(d3.axisLeft(y));
-
-    svg.append("g")
-        .attr("fill", "steelblue")
-        .selectAll()
-        .data(data)
-        .join("rect")
-        .attr("x", x(0))
-        .attr("y", (d) => y(d.description))
-        .attr("width", (d) => x(d.computationResult.computationTime) - x(0))
-        .attr("height", y.bandwidth());
-
-    // Append the SVG element.
-    container.append(svg.node());
-
-    // console.log("\n\n" + result + "\n\n");
-
-    // const obj = JSON.parse(results);
-    // console.log(obj.count);
-    //console.log(obj.result);
-    console.log("\n\n===========================\n\n");
-
-</script>
-
-<h2 style="color: #4695EB">Result:</h2>
-
-<andypf-json-viewer
-        indent="2"
-        expanded="false"
-        theme="material"
-        show-data-types="false"
-        show-toolbar="true"
-        expand-icon-type="square"
-        show-copy="true"
-        show-size="true"
->
-    {results.raw}
-</andypf-json-viewer>
-
-<h2 style="color: #4695EB">Jobs:</h2>
-<andypf-json-viewer
-        indent="2"
-        expanded="false"
-        theme="material"
-        show-data-types="false"
-        show-toolbar="true"
-        expand-icon-type="square"
-        show-copy="true"
-        show-size="true"
->
-    {jobs.raw}
-</andypf-json-viewer>
 </html>

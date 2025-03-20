@@ -12,13 +12,16 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.kla.dto.ComputationResults;
-import org.kla.dto.Result;
+import org.kla.scheduler.Algorithm;
 import org.kla.service.FileService;
 import org.kla.service.SchedulerService;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Stream;
+
+import static org.apache.commons.lang3.ArrayUtils.contains;
+import static org.kla.scheduler.Algorithm.SBS;
 
 @Path("/")
 public class SchedulerResource {
@@ -36,30 +39,33 @@ public class SchedulerResource {
     ObjectMapper mapper;
 
     @GET
-    @Path("/hello")
-    @Produces(MediaType.APPLICATION_JSON)
-    public ComputationResults hello() {
-        return null; //schedulerService.run();
-//        return "Helslo from Quarkus REST";
-    }
-
-    @GET
     @Produces(MediaType.TEXT_HTML)
     public TemplateInstance get(
-            @DefaultValue("default") @QueryParam("file") String fileName,
+            @DefaultValue("default") @QueryParam("file") String currentFile,
             @DefaultValue("2") @QueryParam("machine") Integer numberOfMachines,
-            @QueryParam("alg") String[] algorithms
+            @QueryParam("alg") Algorithm[] algorithms
     ) throws JsonProcessingException {
         if (algorithms == null || algorithms.length == 0) {
-            algorithms = new String[]{"SBS"};
+            algorithms = new Algorithm[]{SBS};
         }
-        ComputationResults result = schedulerService.run(fileName, numberOfMachines, algorithms);
+        ComputationResults result = schedulerService.run(currentFile, numberOfMachines, algorithms);
         Set<String> files = fileService.listFiles();
 
         return index.data("jobs", mapper.writeValueAsString(result.getJobs()))
                 .data("results", mapper.writeValueAsString(result.getResults()))
+                .data("resultSize", result.getResults().size())
                 .data("machine", numberOfMachines)
-                .data("algorithms", mapper.writeValueAsString(algorithms))
+                .data("currentFile", currentFile)
+//                .data("algorithms", Algorithm.values())
+                .data("algorithms", getAlgorithms(algorithms))
                 .data("files", files);
     }
+
+    private List<AlgorithmHtml> getAlgorithms(Algorithm[] algorithms) {
+        return Arrays.stream(Algorithm.values())
+                .map(a -> new AlgorithmHtml(a.name(), a.getDescription(), contains(algorithms, a)))
+                .toList();
+    }
+
+    private record AlgorithmHtml(String name, String description, Boolean selected) {}
 }
