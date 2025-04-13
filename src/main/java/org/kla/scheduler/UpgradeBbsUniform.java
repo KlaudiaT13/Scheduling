@@ -47,7 +47,8 @@ public class UpgradeBbsUniform implements Compute {
             }
         }
 
-        b.sort(Comparator.comparing(Job::getTau));
+        b.sort(Comparator.comparing(Job::getTau)); //nonsense? should be maybe upper limit,
+//        b.sort(Comparator.comparing(Job::));
         s.sort(Comparator.comparing(Job::getTau)); //<- here, difference from sbs, aside from different tm
 
         int tempm = numberOfMachines;
@@ -176,13 +177,13 @@ private Machine whereToSchedule(Machine machine1, Machine machine2, double estim
             }
         }
         estimatedOverhead = timeM2 - currentTime;
-        double fractionOfOverhead = 0.25;
+        double fractionOfOverhead = 0.5;
         //we can only use currentTime and timeM2, NOT getCurrentLoad
         double timeM1 = currentTime;
         double differenceIfTaskAddedToM2 = Math.abs(timeM2 + timeOfNewTask - timeM1);
         double differenceIfTaskAddedToM1 = Math.abs(timeM1 + timeOfNewTask - timeM2);
         //difference should be as close as possible to fractionOfOverhead * estimatedOverhead
-        if(Math.abs(differenceIfTaskAddedToM2 - fractionOfOverhead * estimatedOverhead) < Math.abs(differenceIfTaskAddedToM1 - fractionOfOverhead * estimatedOverhead)){
+        if(Math.abs(differenceIfTaskAddedToM2 - fractionOfOverhead * estimatedTime) < Math.abs(differenceIfTaskAddedToM1 - fractionOfOverhead * estimatedTime)){
             return machine2;
         } else{
             return machine1;

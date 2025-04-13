@@ -25,6 +25,10 @@ public class Machine {
         return currentLoad;
     }
 
+    public void setCurrentLoad(double currentLoad) {
+        this.currentLoad = currentLoad;
+    }
+
     public ArrayList<Task> getTasks() {
         return tasks;
     }
@@ -39,6 +43,11 @@ public class Machine {
         } else {
             job.setDone();
         }
+    }
+
+    public void addTask(Task task) {
+        tasks.add(task);
+        currentLoad += task.completitionTime;
     }
 
     public static class MachineComparator implements Comparator<Machine> {
