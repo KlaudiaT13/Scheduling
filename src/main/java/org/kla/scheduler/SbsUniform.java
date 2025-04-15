@@ -52,41 +52,6 @@ public class SbsUniform implements Compute {
 
             machinesq.add(machine);
         }
-
-//        //take numberOfMachines jobs from s and place them in s1 (if there are enough)
-//        int tempm = numberOfMachines;
-//        for (int i = 0; i < s.size(); i++) {
-//            if (tempm > 0) {
-//                s1.add(s.get(i));
-//                tempm--;
-//            } else {
-//                s2.add(s.get(i));
-//            }
-//        }
-//        //step 5
-//        for (int i = 0; i < s1.size(); i++) {
-//            Machine machine = machinesq.poll();
-//            if (s1.get(i).getRatio() >= PHI) {
-//                machine.addTask(s1.get(i), JobType.TEST);
-//                machine.addTask(s1.get(i), JobType.REDUCED_TIME);
-//            } else {
-//                machine.addTask(s1.get(i), JobType.UPPER_LIMIT);
-//            }
-//            machinesq.add(machine);
-//        }
-//        for (int i = 0; i < b.size(); i++) {
-//            Machine machine = machinesq.poll();
-//            machine.addTask(b.get(i), JobType.TEST);
-//            machine.addTask(b.get(i), JobType.REDUCED_TIME);
-//            machinesq.add(machine);
-//        }
-//
-//        for (int i = 0; i < s2.size(); i++) {
-//            Machine machine = machinesq.poll();
-//            machine.addTask(s2.get(i), JobType.UPPER_LIMIT);
-//            machinesq.add(machine);
-//        }
-
         return new ComputationResult(new ArrayList<>(machinesq));
     }
 

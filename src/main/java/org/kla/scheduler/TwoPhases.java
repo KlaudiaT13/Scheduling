@@ -46,7 +46,6 @@ public class TwoPhases implements Compute {
             }
         }
 
-        //Todo check if its decreasing
         firstPhase.sort(Comparator.comparing(Task::getCompletitionTime).reversed());
         secondPhase.sort(Comparator.comparing(Task::getCompletitionTime).reversed());
 

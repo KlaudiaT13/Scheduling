@@ -1,0 +1,504 @@
+{
+  "description" : "100 jobs, uniform tests, everything else generated in exponential distribution, lambda = 1",
+  "jobTemplateList" : [ {
+    "upperLimit" : 1.3338675428046496,
+    "reducedComputationTime" : 1.270231857870061,
+    "test" : 1.0,
+    "id" : "2d025ef9-18b6-44fc-bd43-a3e1f27ab90b"
+  }, {
+    "upperLimit" : 5.22744403611333,
+    "reducedComputationTime" : 1.8346784501664795,
+    "test" : 1.0,
+    "id" : "615d23ce-898d-47b8-b7be-f6146bb6e801"
+  }, {
+    "upperLimit" : 2.8283010618723003,
+    "reducedComputationTime" : 2.8283010618723003,
+    "test" : 1.0,
+    "id" : "e39df190-78ff-43a7-846b-e95761373245"
+  }, {
+    "upperLimit" : 0.498294346899521,
+    "reducedComputationTime" : 0.10109548112374891,
+    "test" : 1.0,
+    "id" : "63db6dad-0dd3-461b-a207-5fcd41afa025"
+  }, {
+    "upperLimit" : 0.6529291643442149,
+    "reducedComputationTime" : 0.015225271463650152,
+    "test" : 1.0,
+    "id" : "2ea5e3bd-bc6a-49cf-860e-8c6938bd8108"
+  }, {
+    "upperLimit" : 0.4727555457770236,
+    "reducedComputationTime" : 0.4727555457770236,
+    "test" : 1.0,
+    "id" : "d25ed96c-6a08-46a4-bf14-e1014a00e4d3"
+  }, {
+    "upperLimit" : 0.32523467978256015,
+    "reducedComputationTime" : 0.32523467978256015,
+    "test" : 1.0,
+    "id" : "8b7e1002-f9a2-4e47-84ea-ace32b10576c"
+  }, {
+    "upperLimit" : 0.06958406447212227,
+    "reducedComputationTime" : 0.06958406447212227,
+    "test" : 1.0,
+    "id" : "e0f6ffed-1b43-4250-95db-51bbcb7f19ec"
+  }, {
+    "upperLimit" : 0.7629092847684,
+    "reducedComputationTime" : 0.4004454798478799,
+    "test" : 1.0,
+    "id" : "9b0f8edc-a1b7-48ab-9966-526fa96d40fc"
+  }, {
+    "upperLimit" : 0.31997953796350903,
+    "reducedComputationTime" : 0.1250709846573652,
+    "test" : 1.0,
+    "id" : "589ba8c9-b860-40ad-8488-9b0297e8b0bc"
+  }, {
+    "upperLimit" : 0.08220878451416548,
+    "reducedComputationTime" : 0.08220878451416548,
+    "test" : 1.0,
+    "id" : "2b1da68c-32d5-4e04-9057-558b23e1a568"
+  }, {
+    "upperLimit" : 0.17501538009084047,
+    "reducedComputationTime" : 0.0033833046976174015,
+    "test" : 1.0,
+    "id" : "18a21949-8cb8-4d42-85f7-2ed2552b2807"
+  }, {
+    "upperLimit" : 1.3184569630738314,
+    "reducedComputationTime" : 0.2526612119287422,
+    "test" : 1.0,
+    "id" : "05d5357d-a1a7-4b38-9fda-fe4664e81006"
+  }, {
+    "upperLimit" : 1.0989132549997116,
+    "reducedComputationTime" : 0.09461931734108657,
+    "test" : 1.0,
+    "id" : "96ec05bf-fa7b-41f8-8d30-6dbb66809805"
+  }, {
+    "upperLimit" : 0.3781600591371823,
+    "reducedComputationTime" : 0.3781600591371823,
+    "test" : 1.0,
+    "id" : "3896b1da-e21b-49c1-984e-2a449a3bf6fb"
+  }, {
+    "upperLimit" : 2.0515143580954396,
+    "reducedComputationTime" : 0.6074624585489667,
+    "test" : 1.0,
+    "id" : "6e09c843-d177-437f-ba44-ad7138dbfbd6"
+  }, {
+    "upperLimit" : 0.17151699573191173,
+    "reducedComputationTime" : 0.17151699573191173,
+    "test" : 1.0,
+    "id" : "479cae5e-116f-4d7d-b78e-4a255de98344"
+  }, {
+    "upperLimit" : 0.8647035375944399,
+    "reducedComputationTime" : 0.23149547806090875,
+    "test" : 1.0,
+    "id" : "64f489ef-df5b-40c0-b924-0792b33b8c16"
+  }, {
+    "upperLimit" : 1.4574516411486946,
+    "reducedComputationTime" : 1.4574516411486946,
+    "test" : 1.0,
+    "id" : "1d789feb-90c7-421a-88e5-98cc755563ff"
+  }, {
+    "upperLimit" : 0.9924012211508793,
+    "reducedComputationTime" : 0.9924012211508793,
+    "test" : 1.0,
+    "id" : "5aadffc7-aa05-4577-ab1b-4f0259fa0896"
+  }, {
+    "upperLimit" : 2.8976706246010067,
+    "reducedComputationTime" : 1.0720785761645575,
+    "test" : 1.0,
+    "id" : "3d514ed8-b8d1-41c3-8a28-eba324be5a68"
+  }, {
+    "upperLimit" : 0.20202338219769783,
+    "reducedComputationTime" : 0.20202338219769783,
+    "test" : 1.0,
+    "id" : "21fcc2e7-e510-4ed7-9136-c2cf2d2d55e6"
+  }, {
+    "upperLimit" : 1.2357389662627831,
+    "reducedComputationTime" : 0.9971403200323263,
+    "test" : 1.0,
+    "id" : "ecdfc8af-ab25-4ab4-9e55-34030a06e9ac"
+  }, {
+    "upperLimit" : 0.15552230282600205,
+    "reducedComputationTime" : 0.14141738508485946,
+    "test" : 1.0,
+    "id" : "2950f824-84c6-4c29-92ea-b11457f1c3f5"
+  }, {
+    "upperLimit" : 0.6433712940608934,
+    "reducedComputationTime" : 0.6433712940608934,
+    "test" : 1.0,
+    "id" : "e88e44dc-a44f-426e-ae6b-ab02eb863410"
+  }, {
+    "upperLimit" : 0.09597086300961445,
+    "reducedComputationTime" : 0.09597086300961445,
+    "test" : 1.0,
+    "id" : "c467a8db-af0e-4c9e-9627-3df30ea645c9"
+  }, {
+    "upperLimit" : 0.11791602691654718,
+    "reducedComputationTime" : 0.11791602691654718,
+    "test" : 1.0,
+    "id" : "aa988e17-2f27-47af-9f50-e20f2e84b90e"
+  }, {
+    "upperLimit" : 0.4229401453968172,
+    "reducedComputationTime" : 0.4229401453968172,
+    "test" : 1.0,
+    "id" : "dd2c3790-8106-43a7-9f0e-751775e7b029"
+  }, {
+    "upperLimit" : 1.5656319992095729,
+    "reducedComputationTime" : 1.5656319992095729,
+    "test" : 1.0,
+    "id" : "bb8befab-61a8-43cf-81ff-0c2b6a8984f8"
+  }, {
+    "upperLimit" : 0.7029112928451745,
+    "reducedComputationTime" : 0.43742213976274347,
+    "test" : 1.0,
+    "id" : "a23281ae-4d1d-477f-bfb9-7a4df2ec82bd"
+  }, {
+    "upperLimit" : 2.40133173993312,
+    "reducedComputationTime" : 0.2773615772326758,
+    "test" : 1.0,
+    "id" : "156971fc-349a-402e-8b99-21232bdbd613"
+  }, {
+    "upperLimit" : 0.12954364848877992,
+    "reducedComputationTime" : 0.12448004298227718,
+    "test" : 1.0,
+    "id" : "e5d474cd-c37c-4515-9008-be5763a0b27f"
+  }, {
+    "upperLimit" : 0.5381859990686323,
+    "reducedComputationTime" : 0.5381859990686323,
+    "test" : 1.0,
+    "id" : "9a427823-4088-4c8d-a3c1-ae3d78effcdc"
+  }, {
+    "upperLimit" : 0.09234653256302745,
+    "reducedComputationTime" : 0.09234653256302745,
+    "test" : 1.0,
+    "id" : "05712803-9d32-45f9-a21c-c62246b2379c"
+  }, {
+    "upperLimit" : 0.8631443790607711,
+    "reducedComputationTime" : 0.007143717712739327,
+    "test" : 1.0,
+    "id" : "087f861c-aa9c-4e92-9619-accbdbe9f512"
+  }, {
+    "upperLimit" : 0.9675512857413223,
+    "reducedComputationTime" : 0.4448110736556562,
+    "test" : 1.0,
+    "id" : "875a3627-33ae-48a9-b31a-12b0a930e360"
+  }, {
+    "upperLimit" : 2.265385807742541,
+    "reducedComputationTime" : 0.09089931572268839,
+    "test" : 1.0,
+    "id" : "0ee57111-c053-444a-8140-efd55c3225ac"
+  }, {
+    "upperLimit" : 0.41620137307759275,
+    "reducedComputationTime" : 0.41620137307759275,
+    "test" : 1.0,
+    "id" : "562408f8-40fe-46f3-8c98-13a20c311478"
+  }, {
+    "upperLimit" : 0.6917060942495257,
+    "reducedComputationTime" : 0.6917060942495257,
+    "test" : 1.0,
+    "id" : "13bd65ba-fcfc-49c6-b4b3-5c3b0da74504"
+  }, {
+    "upperLimit" : 0.14785317225302447,
+    "reducedComputationTime" : 0.14785317225302447,
+    "test" : 1.0,
+    "id" : "5c4751b9-a159-4192-b080-b3826facba1f"
+  }, {
+    "upperLimit" : 2.074272180244384,
+    "reducedComputationTime" : 0.5220732204094711,
+    "test" : 1.0,
+    "id" : "7c3b0578-17ee-4e2f-a7aa-12f4e1c3910d"
+  }, {
+    "upperLimit" : 0.481120031380345,
+    "reducedComputationTime" : 0.481120031380345,
+    "test" : 1.0,
+    "id" : "9e605a7c-cc32-48bc-9ab7-82c17a095028"
+  }, {
+    "upperLimit" : 1.594872313070995,
+    "reducedComputationTime" : 0.02326161869699207,
+    "test" : 1.0,
+    "id" : "ec2f2b69-419e-4b34-a0ae-22b8d7bcd403"
+  }, {
+    "upperLimit" : 1.9531300647481409,
+    "reducedComputationTime" : 0.553163160277852,
+    "test" : 1.0,
+    "id" : "07f09a07-81c4-4752-9df7-5e86af8eeaa2"
+  }, {
+    "upperLimit" : 0.05819136034153269,
+    "reducedComputationTime" : 0.05819136034153269,
+    "test" : 1.0,
+    "id" : "1007ed56-abdc-444a-b4af-35ffb9e960a1"
+  }, {
+    "upperLimit" : 0.8269186889754747,
+    "reducedComputationTime" : 0.1542819187033726,
+    "test" : 1.0,
+    "id" : "b2b714b3-c092-4df6-bb95-dfae9ec6ed5d"
+  }, {
+    "upperLimit" : 1.139643213822182,
+    "reducedComputationTime" : 0.14394264056563907,
+    "test" : 1.0,
+    "id" : "b810cea4-85dc-4081-8ab3-29933c4ccf61"
+  }, {
+    "upperLimit" : 0.6291553857569463,
+    "reducedComputationTime" : 0.6291553857569463,
+    "test" : 1.0,
+    "id" : "36531153-bec3-49f6-a66d-695c2a5a81f8"
+  }, {
+    "upperLimit" : 1.0120169948613833,
+    "reducedComputationTime" : 1.0120169948613833,
+    "test" : 1.0,
+    "id" : "767535c6-cd33-4a46-b774-41f2e3c174ad"
+  }, {
+    "upperLimit" : 0.14112636035038456,
+    "reducedComputationTime" : 0.14112636035038456,
+    "test" : 1.0,
+    "id" : "2d7d1569-a26a-4377-b4b8-295f2aeb270d"
+  }, {
+    "upperLimit" : 0.5742563527272749,
+    "reducedComputationTime" : 0.2557194318460337,
+    "test" : 1.0,
+    "id" : "5f9d3d04-c543-44e4-92d9-1f0f7851785f"
+  }, {
+    "upperLimit" : 1.9756734108543406,
+    "reducedComputationTime" : 1.9756734108543406,
+    "test" : 1.0,
+    "id" : "4ac06ad0-7399-469e-b2e5-95647d1cbf95"
+  }, {
+    "upperLimit" : 1.5604498170472805,
+    "reducedComputationTime" : 1.5604498170472805,
+    "test" : 1.0,
+    "id" : "63f6dd6e-cde7-457f-895e-740559070943"
+  }, {
+    "upperLimit" : 0.6915083749296421,
+    "reducedComputationTime" : 0.3394128022968522,
+    "test" : 1.0,
+    "id" : "f8252e87-cbb1-4bb9-9ba7-45912364becd"
+  }, {
+    "upperLimit" : 0.8660132146234297,
+    "reducedComputationTime" : 0.6518154090999215,
+    "test" : 1.0,
+    "id" : "4c4e1238-8a7c-4f80-9afc-e10474e2d59c"
+  }, {
+    "upperLimit" : 1.4926281033220372,
+    "reducedComputationTime" : 1.4926281033220372,
+    "test" : 1.0,
+    "id" : "46848115-a9e8-4f01-b68a-dc45d5316829"
+  }, {
+    "upperLimit" : 0.0434622764493912,
+    "reducedComputationTime" : 0.0434622764493912,
+    "test" : 1.0,
+    "id" : "4cdaddc4-ca88-4780-863f-1d8791b5975f"
+  }, {
+    "upperLimit" : 1.4470497668785725,
+    "reducedComputationTime" : 1.2768949805020182,
+    "test" : 1.0,
+    "id" : "9176b34c-8993-4016-9634-462dff1abab8"
+  }, {
+    "upperLimit" : 0.1272000791297511,
+    "reducedComputationTime" : 0.039626751005432184,
+    "test" : 1.0,
+    "id" : "d09bb637-8ecc-4edc-9b37-68d6f016279b"
+  }, {
+    "upperLimit" : 1.647274353408418,
+    "reducedComputationTime" : 0.4837249321456554,
+    "test" : 1.0,
+    "id" : "1321b71b-61d2-4f84-b52b-a9446f9b6f41"
+  }, {
+    "upperLimit" : 0.041265738878008586,
+    "reducedComputationTime" : 0.041265738878008586,
+    "test" : 1.0,
+    "id" : "81058556-ad24-4b3a-9a6d-5a5af3f3f560"
+  }, {
+    "upperLimit" : 0.9538710793758565,
+    "reducedComputationTime" : 0.9538710793758565,
+    "test" : 1.0,
+    "id" : "c0a1856a-15b8-4edd-b21d-a2e2088ea3a7"
+  }, {
+    "upperLimit" : 1.1684047306300407,
+    "reducedComputationTime" : 0.8113245930089705,
+    "test" : 1.0,
+    "id" : "a763e65b-a694-4448-af21-e2b4e0cc37c5"
+  }, {
+    "upperLimit" : 0.25341686366178806,
+    "reducedComputationTime" : 0.1274431756145467,
+    "test" : 1.0,
+    "id" : "21ba8ce8-7bef-412b-a11d-baa13890a15f"
+  }, {
+    "upperLimit" : 0.6904500128903124,
+    "reducedComputationTime" : 0.6904500128903124,
+    "test" : 1.0,
+    "id" : "e1b95468-6240-4601-ac05-4e6be622c714"
+  }, {
+    "upperLimit" : 2.2948565969968895,
+    "reducedComputationTime" : 1.4621415026559692,
+    "test" : 1.0,
+    "id" : "78130196-33d7-4e54-bd1f-d57ff81cabc2"
+  }, {
+    "upperLimit" : 0.620996594722855,
+    "reducedComputationTime" : 0.0806800097387734,
+    "test" : 1.0,
+    "id" : "6f60faee-203c-4bcd-8be2-0ab84b73dfd9"
+  }, {
+    "upperLimit" : 5.150928503380282,
+    "reducedComputationTime" : 0.21978385174617884,
+    "test" : 1.0,
+    "id" : "a193f29e-cbe0-4442-8ccc-4f09884f58dd"
+  }, {
+    "upperLimit" : 0.19802587642797506,
+    "reducedComputationTime" : 0.19802587642797506,
+    "test" : 1.0,
+    "id" : "c0df180f-fef4-425b-8e98-81a527c7afb2"
+  }, {
+    "upperLimit" : 0.5791511363959617,
+    "reducedComputationTime" : 0.5791511363959617,
+    "test" : 1.0,
+    "id" : "95722805-a3f7-4731-a8af-3df38db3bb85"
+  }, {
+    "upperLimit" : 0.5902468338677918,
+    "reducedComputationTime" : 0.5902468338677918,
+    "test" : 1.0,
+    "id" : "0e8759c6-3179-4512-9073-e19d77ddad98"
+  }, {
+    "upperLimit" : 0.10262057668013369,
+    "reducedComputationTime" : 0.10262057668013369,
+    "test" : 1.0,
+    "id" : "de57d2ce-4b4c-48eb-8eb4-b5cee6c79ebd"
+  }, {
+    "upperLimit" : 1.133838990498471,
+    "reducedComputationTime" : 0.3217837528853673,
+    "test" : 1.0,
+    "id" : "b34f85ea-177b-4eb4-8fc6-ce15be75d1f2"
+  }, {
+    "upperLimit" : 0.9870569885488487,
+    "reducedComputationTime" : 0.08012942055206441,
+    "test" : 1.0,
+    "id" : "01bf508c-613e-4e87-b9d2-94005009c740"
+  }, {
+    "upperLimit" : 0.026657134868524463,
+    "reducedComputationTime" : 0.026657134868524463,
+    "test" : 1.0,
+    "id" : "30488a9e-0ae9-4ea2-845d-f8c6065ab7ca"
+  }, {
+    "upperLimit" : 2.261510653429087,
+    "reducedComputationTime" : 1.5147955356311213,
+    "test" : 1.0,
+    "id" : "e358af0f-d1f3-499e-a7a7-32ceb7e6bff8"
+  }, {
+    "upperLimit" : 3.8088301236796176,
+    "reducedComputationTime" : 0.050082177763682595,
+    "test" : 1.0,
+    "id" : "bc174d5b-012e-4314-aa39-92333425c17b"
+  }, {
+    "upperLimit" : 1.901693635013911,
+    "reducedComputationTime" : 0.49664523480882516,
+    "test" : 1.0,
+    "id" : "b4a4f2aa-983e-40df-8fef-2cf9132e52d2"
+  }, {
+    "upperLimit" : 0.13117141929561474,
+    "reducedComputationTime" : 0.13117141929561474,
+    "test" : 1.0,
+    "id" : "cdb20997-7ed5-49be-853f-00f653cc4423"
+  }, {
+    "upperLimit" : 0.44369682078570927,
+    "reducedComputationTime" : 0.44369682078570927,
+    "test" : 1.0,
+    "id" : "e0061ec1-e0bd-467d-acc7-8aa03e5b87b6"
+  }, {
+    "upperLimit" : 0.8699546176893688,
+    "reducedComputationTime" : 0.8699546176893688,
+    "test" : 1.0,
+    "id" : "1ab40aa3-cac7-4164-9fad-c5a7a4a27331"
+  }, {
+    "upperLimit" : 1.5204753273628873,
+    "reducedComputationTime" : 1.1489068401746565,
+    "test" : 1.0,
+    "id" : "71e39dbe-5f55-4e0a-9f3a-f5098b7ed951"
+  }, {
+    "upperLimit" : 3.8565490259151454,
+    "reducedComputationTime" : 1.6542243990252061,
+    "test" : 1.0,
+    "id" : "d564eebd-8e7d-4705-afce-52621b3e262d"
+  }, {
+    "upperLimit" : 1.352779194813833,
+    "reducedComputationTime" : 0.0818852982990509,
+    "test" : 1.0,
+    "id" : "10049609-3e48-4221-91d7-45b388dae897"
+  }, {
+    "upperLimit" : 2.0405652211799126,
+    "reducedComputationTime" : 0.46637552835840557,
+    "test" : 1.0,
+    "id" : "f7493775-dba8-49e6-bc33-184b7d16f370"
+  }, {
+    "upperLimit" : 0.39259151112366936,
+    "reducedComputationTime" : 0.39259151112366936,
+    "test" : 1.0,
+    "id" : "75161b17-5b49-4f53-80c2-2a7490dfa84b"
+  }, {
+    "upperLimit" : 0.8716206288458722,
+    "reducedComputationTime" : 0.8716206288458722,
+    "test" : 1.0,
+    "id" : "c860b08b-ec66-4a32-889e-780b69f7b5ab"
+  }, {
+    "upperLimit" : 2.782638256195721,
+    "reducedComputationTime" : 0.31189629626308496,
+    "test" : 1.0,
+    "id" : "c2e870a6-52ac-460b-8aa5-2a984c0383ec"
+  }, {
+    "upperLimit" : 1.5262127702902282,
+    "reducedComputationTime" : 0.8652515005530788,
+    "test" : 1.0,
+    "id" : "0c272ddf-fb08-48b5-8e21-4f57d8bf49d3"
+  }, {
+    "upperLimit" : 0.32448984416046145,
+    "reducedComputationTime" : 0.32448984416046145,
+    "test" : 1.0,
+    "id" : "c2ecc837-0dac-4661-afa1-cc88442dc55b"
+  }, {
+    "upperLimit" : 0.5538843992019724,
+    "reducedComputationTime" : 0.5538843992019724,
+    "test" : 1.0,
+    "id" : "6144dcbf-2748-45d2-aa46-2eec0715e4c1"
+  }, {
+    "upperLimit" : 0.2620411858014149,
+    "reducedComputationTime" : 0.04869997444219123,
+    "test" : 1.0,
+    "id" : "858ae184-ea2f-4762-933c-0c6301b6e9f7"
+  }, {
+    "upperLimit" : 0.5787769238850163,
+    "reducedComputationTime" : 0.2364041632131069,
+    "test" : 1.0,
+    "id" : "fcf0c2a7-3a45-4f77-a7f1-d3fd4e583486"
+  }, {
+    "upperLimit" : 0.1002004332448213,
+    "reducedComputationTime" : 0.1002004332448213,
+    "test" : 1.0,
+    "id" : "f89ce118-81ef-4ccc-8103-bad8fc72df66"
+  }, {
+    "upperLimit" : 1.250906343888963,
+    "reducedComputationTime" : 0.06564365074164558,
+    "test" : 1.0,
+    "id" : "ce3af476-5319-4b58-90a7-2bb7d81bf8f8"
+  }, {
+    "upperLimit" : 0.873813728757708,
+    "reducedComputationTime" : 0.873813728757708,
+    "test" : 1.0,
+    "id" : "d6659c33-9c7f-42ed-9997-829fb1cb533d"
+  }, {
+    "upperLimit" : 4.188811840047298,
+    "reducedComputationTime" : 0.3891926684977345,
+    "test" : 1.0,
+    "id" : "e5f68ef9-3827-4574-a5d3-740e6e401335"
+  }, {
+    "upperLimit" : 3.4318617085423164,
+    "reducedComputationTime" : 0.6566801044790056,
+    "test" : 1.0,
+    "id" : "def8fb37-57b2-446f-aac4-7ddb790b4612"
+  }, {
+    "upperLimit" : 1.1731974881750469,
+    "reducedComputationTime" : 0.33214108896228767,
+    "test" : 1.0,
+    "id" : "cb2d7587-efe2-4438-99c1-c00366a1a19b"
+  }, {
+    "upperLimit" : 1.5702268486673197,
+    "reducedComputationTime" : 0.5156449424045162,
+    "test" : 1.0,
+    "id" : "8d9d501b-ef84-4668-8eaf-2a1d292872ca"
+  } ]
+}

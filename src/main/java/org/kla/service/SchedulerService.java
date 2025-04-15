@@ -47,9 +47,6 @@ public class SchedulerService {
             case SbsUniform -> new SbsUniform(numberOfMachines, jobTemplates);
             case BbsUniform -> new BbsUniform(numberOfMachines, jobTemplates);
             case Greedy -> new Greedy(numberOfMachines, jobTemplates);
-//            case OptOffline -> new OptOffline(numberOfMachines, jobTemplates);
-//            case UpgradeBbsUniform -> new UpgradeBbsUniform(numberOfMachines, jobTemplates);
-//            case  BbsUniformTest -> new BbsUniformTest(numberOfMachines, jobTemplates);
             case TwoPhases -> new TwoPhases(numberOfMachines, jobTemplates);
         };
     }

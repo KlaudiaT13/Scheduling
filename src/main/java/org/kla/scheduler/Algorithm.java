@@ -6,9 +6,6 @@ public enum Algorithm {
     SbsUniform(""),
     BbsUniform(""),
     Greedy(""),
-//    OptOffline("bruteforce -> reallly slow"),
-//    UpgradeBbsUniform(""),
-//    BbsUniformTest(""),
     TwoPhases("Sorted List Scheduling algorithm as base");
 
     final String description;

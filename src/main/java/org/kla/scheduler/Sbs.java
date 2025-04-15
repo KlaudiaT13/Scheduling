@@ -52,8 +52,7 @@ public class Sbs implements Compute {
             }
         }
 
-        //TODO did it sort right? should be from low to high
-        s.sort(Comparator.comparing(Job::getTau)); //TODO try to restore random order in s2, maybe important
+        s.sort(Comparator.comparing(Job::getTau));
 
         //take numberOfMachines jobs from s and place them in s1 (if there are enough)
         int tempm = numberOfMachines;
