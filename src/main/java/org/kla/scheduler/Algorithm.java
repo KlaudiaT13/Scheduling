@@ -2,13 +2,13 @@ package org.kla.scheduler;
 
 public enum Algorithm {
     SBS(""),
-    Greedy(""),
-    OptOffline("bruteforce -> reallly slow"),
-    SbsUniform(""),
     Bbs(""),
+    SbsUniform(""),
     BbsUniform(""),
-    UpgradeBbsUniform(""),
-    BbsUniformTest(""),
+    Greedy(""),
+//    OptOffline("bruteforce -> reallly slow"),
+//    UpgradeBbsUniform(""),
+//    BbsUniformTest(""),
     TwoPhases("Sorted List Scheduling algorithm as base");
 
     final String description;

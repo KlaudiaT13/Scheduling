@@ -33,9 +33,10 @@ public class SchedulerService {
     }
 
     public void generateToFile() {
-        List<JobTemplate> jobsTemplate = generatorService.generateJobTemplates(30, 1);
+        List<JobTemplate> jobsTemplate = generatorService.generateJobTemplates(3, 1);
 
-        ComputationJob computationJob = new ComputationJob(jobsTemplate, "20 jobs, uniform tests, everything else generated in exponential distribution, lambda = 1");
+        ComputationJob computationJob = new ComputationJob(jobsTemplate, "3 jobs, general tests, lambda = 1");
+//        ComputationJob computationJob = new ComputationJob(jobsTemplate, "100 jobs, uniform tests, everything else generated in exponential distribution, lambda = 1");
         fileService.saveToFile(computationJob);
     }
 
@@ -46,9 +47,9 @@ public class SchedulerService {
             case SbsUniform -> new SbsUniform(numberOfMachines, jobTemplates);
             case BbsUniform -> new BbsUniform(numberOfMachines, jobTemplates);
             case Greedy -> new Greedy(numberOfMachines, jobTemplates);
-            case OptOffline -> new OptOffline(numberOfMachines, jobTemplates);
-            case UpgradeBbsUniform -> new UpgradeBbsUniform(numberOfMachines, jobTemplates);
-            case  BbsUniformTest -> new BbsUniformTest(numberOfMachines, jobTemplates);
+//            case OptOffline -> new OptOffline(numberOfMachines, jobTemplates);
+//            case UpgradeBbsUniform -> new UpgradeBbsUniform(numberOfMachines, jobTemplates);
+//            case  BbsUniformTest -> new BbsUniformTest(numberOfMachines, jobTemplates);
             case TwoPhases -> new TwoPhases(numberOfMachines, jobTemplates);
         };
     }
