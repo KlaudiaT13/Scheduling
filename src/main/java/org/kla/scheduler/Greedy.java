@@ -36,16 +36,17 @@ public class Greedy implements Compute {
                 .map(Job::of)
                 .toList();
 
-        Machine leastLoaded;
+
 
         for(Job job: jobs){
-            leastLoaded = machinesq.peek();
+            Machine leastLoaded = machinesq.poll();
             if(job.getRatio()>=PHI){
                 leastLoaded.addTask(job, JobType.TEST);
                 leastLoaded.addTask(job, JobType.REDUCED_TIME);
             } else{
                 leastLoaded.addTask(job, JobType.UPPER_LIMIT);
             }
+            machinesq.add(leastLoaded);
         }
 
         return new ComputationResult(new ArrayList<>(machinesq));
