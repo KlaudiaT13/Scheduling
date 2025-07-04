@@ -1,4 +1,4 @@
-# scheduling
+# Scheduling
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 The program compares performance of various algorithms for scheduling with testing on multiple-core processors.
